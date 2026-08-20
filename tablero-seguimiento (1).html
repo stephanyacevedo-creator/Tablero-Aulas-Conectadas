@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tablero de Seguimiento — Aulas Conectadas</title>
+<style>
+  :root{
+    --bg: #f6f7f5;
+    --ink: #1f2a24;
+    --muted: #5c6b63;
+    --line: #dfe4e0;
+    --accent: #1d4f5e;
+
+    --verde: #2e7d4f;
+    --verde-bg: #e3f3e8;
+    --verde-border: #bfe1cc;
+
+    --amarillo: #a5760a;
+    --amarillo-bg: #fbf0d9;
+    --amarillo-border: #f0dba8;
+
+    --rojo: #b5382f;
+    --rojo-bg: #fbe3e1;
+    --rojo-border: #f2c2bd;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+    padding: 32px 20px 60px;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; }
+
+  header{ margin-bottom: 32px; }
+  .eyebrow{
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  h1{ font-size: 26px; margin: 0 0 4px; font-weight: 700; }
+  .sub{ color: var(--muted); font-size: 14px; margin: 0; }
+
+  h2.section-title{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--muted);
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+  }
+
+  .card{
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid;
+  }
+  .card.verde{ background: var(--verde-bg); border-color: var(--verde-border); }
+  .card.amarillo{ background: var(--amarillo-bg); border-color: var(--amarillo-border); }
+  .card.rojo{ background: var(--rojo-bg); border-color: var(--rojo-border); }
+
+  .card-title{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  .metric-row{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .metric-label{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--muted);
+  }
+  .metric-value{
+    font-size: 15px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .status{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .dot{ width:9px; height:9px; border-radius:50%; flex:none; }
+  .status.verde .dot{ background: var(--verde); }
+  .status.verde { color: var(--verde); }
+  .status.amarillo .dot{ background: var(--amarillo); }
+  .status.amarillo { color: var(--amarillo); }
+  .status.rojo .dot{ background: var(--rojo); }
+  .status.rojo { color: var(--rojo); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Proyecto</p>
+      <h1>Tablero de Seguimiento</h1>
+      <p class="sub">Aulas Conectadas — Cierre de brecha digital educativa en zona rural</p>
+    </header>
+
+    <section>
+      <h2 class="section-title">Indicadores</h2>
+      <div class="grid">
+
+        <div class="card amarillo">
+          <p class="card-title">Cobertura de conectividad en sedes educativas</p>
+          <div class="metric-row">
+            <span class="metric-label">Valor actual</span>
+            <span class="metric-value">58%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Meta</span>
+            <span class="metric-value">90%</span>
+          </div>
+          <div class="status amarillo"><span class="dot"></span>Amarillo</div>
+        </div>
+
+        <div class="card amarillo">
+          <p class="card-title">Docentes capacitados en uso pedagógico de TIC</p>
+          <div class="metric-row">
+            <span class="metric-label">Valor actual</span>
+            <span class="metric-value">130</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Meta</span>
+            <span class="metric-value">200</span>
+          </div>
+          <div class="status amarillo"><span class="dot"></span>Amarillo</div>
+        </div>
+
+        <div class="card amarillo">
+          <p class="card-title">Estudiantes con acceso semanal a dispositivos</p>
+          <div class="metric-row">
+            <span class="metric-label">Valor actual</span>
+            <span class="metric-value">47%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Meta</span>
+            <span class="metric-value">75%</span>
+          </div>
+          <div class="status amarillo"><span class="dot"></span>Amarillo</div>
+        </div>
+
+        <div class="card amarillo">
+          <p class="card-title">Percepción de mejora en el aprendizaje</p>
+          <div class="metric-row">
+            <span class="metric-label">Valor actual</span>
+            <span class="metric-value">51%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Meta</span>
+            <span class="metric-value">70%</span>
+          </div>
+          <div class="status amarillo"><span class="dot"></span>Amarillo</div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</body>
+</html>
